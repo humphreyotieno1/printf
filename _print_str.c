@@ -6,8 +6,10 @@
  * @str: The string to be printed.
  * Return: The number of characters printed.
  */
+
 int _print_str(char *str)
 {
+
 int printed_chars = 0;
 
 if (str == NULL)
@@ -21,4 +23,3 @@ str++;
 
 return (printed_chars);
 }
-
