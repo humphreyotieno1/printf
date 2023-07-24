@@ -10,17 +10,12 @@
 int _print_str(char *str)
 {
 
-int printed_chars = 0;
-
+int len = 0;
 if (str == NULL)
 str = "(null)";
 
-while (*str)
-{
-_putchar(*str);
-printed_chars++;
-str++;
-}
+while (str[len])
+len++;
 
-return (printed_chars);
+return (write(1, str, len));
 }
