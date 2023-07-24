@@ -46,8 +46,9 @@ int _printf(const char *format, ...)
 		{
 			printed_chars += _putchar(*format);
 		}
-		*/
+
 		format++;
+		*/
 	}
 
 	va_end(args);
