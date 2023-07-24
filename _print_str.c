@@ -1,25 +1,22 @@
 #include "main.h"
-#include <stdio.h>
+#include <unistd.h>
 
 /**
- * _print_str - Prints a string to the standard output.
+ * _print_str - Prints a string.
  * @str: The string to be printed.
- *
  * Return: The number of characters printed.
  */
 
 int _print_str(char *str)
 {
-	int i, count = 0;
 
-	if (str == NULL)
-		str = "(null)";
+int len = 0;
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		_putchar(str[i]);
-		count++;
-	}
+if (str == NULL)
+str = "(null)";
 
-	return (count);
+while (str[len] != '\0')
+len++;
+
+return (write(1, str, len));
 }
