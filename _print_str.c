@@ -17,7 +17,8 @@ str = "(null)";
 
 while (*str)
 {
-printed_chars += _putchar(*str);
+_putchar(*str);
+printed_chars++;
 str++;
 }
 
