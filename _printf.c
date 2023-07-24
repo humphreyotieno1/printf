@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <unistd.h>
 
 /**
  * _printf - Produces output according to a format.
@@ -39,6 +37,7 @@ int _printf(const char *format, ...)
 				printed_chars += _putchar(*format);
 				break;
 			}
+			format++;//Skip the character after '%'
 		}
 		else
 		{
