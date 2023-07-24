@@ -16,7 +16,7 @@ if (str == NULL)
 str = "(null)";
 
 while (str[len] != '\0')
- len++;
+len++;
 
 return (write(1, str, len));
 }
