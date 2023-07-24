@@ -7,7 +7,6 @@
  * @format: The format string containing conversion specifiers.
  * Return: The number of characters printed (excluding the null byte).
  */
-
 int _printf(const char *format, ...)
 {
 	if (format == NULL)
@@ -51,3 +50,4 @@ int _printf(const char *format, ...)
 
 	return (printed_chars);
 }
+
