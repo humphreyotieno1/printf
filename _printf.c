@@ -3,15 +3,16 @@
 #include <unistd.h>
 
 /**
- * _printf - produces output according to a format
- * @format: the format string containing conversion specifiers
- * Return: the number of characters printed (excluding the null byte)
+ * _printf - Produces output according to a format.
+ * @format: The format string containing conversion specifiers.
+ * Return: The number of characters printed (excluding the null byte).
  */
-
 int _printf(const char *format, ...)
 {
-	va_list args;
+	if (format == NULL)
+		return (-1);
 
+	va_list args;
 	int printed_chars = 0;
 
 	va_start(args, format);
@@ -36,8 +37,8 @@ int _printf(const char *format, ...)
 				printed_chars += _putchar('%');
 				printed_chars += _putchar(*format);
 				break;
+			}
 		}
-	}
 		else
 		{
 			printed_chars += _putchar(*format);
