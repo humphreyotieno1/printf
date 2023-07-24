@@ -39,11 +39,14 @@ int _printf(const char *format, ...)
 			}
 			format++;//Skip the character after '%'
 		}
+		/**
 		else
 		{
 			printed_chars += _putchar(*format);
 		}
+
 		format++;
+		*/
 	}
 
 	va_end(args);
