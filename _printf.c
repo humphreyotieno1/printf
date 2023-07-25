@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			printed_chars += _putchar(*format);
-			printed_chars++;
+			/*printed_chars++; */
 			format++;
 		}
 	}
@@ -78,7 +78,7 @@ int handle_conversion(const char *format, va_list args)
 		default:
 			printed_chars += _putchar('%');
 			printed_chars += _putchar(*format);
-			printed_chars += 2;
+			/*printed_chars += 2; */
 			break;
 	}
 
