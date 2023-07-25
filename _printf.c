@@ -28,6 +28,7 @@ int _printf(const char *format, ...)
 			if (*format == '\0') /* Invalid conversion: % at the end of format */
 				return (-1);
 
+
 			printed_chars += handle_conversion(format, args);
 			format++;
 		}
