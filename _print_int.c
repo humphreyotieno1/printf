@@ -2,6 +2,8 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+int _putchar(char c);
+
 /**
  * _print_int - Prints an integer.
  * @num: The integer to be printed.
@@ -13,11 +15,12 @@ int _print_int(int num)
 
 int n_chars = 0;
 int is_negative = 0;
+int reversed = 0;
 
 if (num == 0)
 
 {
-return (_print_char('0'));
+return (_putchar('0'));
 }
 
 else if (num < 0)
@@ -25,10 +28,9 @@ else if (num < 0)
 {
 is_negative = 1;
 num = -num;
-n_chars += _print_char('-');
+n_chars += _putchar('-');
 }
 
-int reversed = 0;
 
 while (num != 0)
 {
@@ -38,7 +40,7 @@ num /= 10;
 
 while (reversed != 0)
 {
-n_chars += _print_char(reversed % 10 + '0');
+n_chars += _putchar(reversed % 10 + '0');
 reversed /= 10;
 }
 

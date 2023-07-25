@@ -2,6 +2,9 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+int handle_conversion(const char *format, va_list args);
+int _putchar(char c);
+
 /**
  * _printf - Produces output according to a format.
  * @format: The format string containing conversion specifiers.
