@@ -17,8 +17,8 @@ int n_chars = 0;
 int is_negative = 0;
 int reversed = 0;
 
-if (num == 0)
-{
+	if (num == 0)
+	{
 		return (_putchar('0'));
 	}
 	else if (num < 0)
