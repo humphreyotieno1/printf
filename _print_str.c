@@ -10,17 +10,18 @@
  */
 int _print_str(char *str)
 {
-	int len = 0;
-if (str == NULL)
-{
 
-write(1, "(null)", 6);
-return (6);
-}
+	int printed_chars = 0;
 
+	if (str == NULL)
+		str = "(null)";
 
-while (str[len] != '\0')
-len++;
+	while (*str)
+	{
+		_putchar(*str);
+		printed_chars++;
+		str++;
+	}
 
-return (write(1, str, len));
+	return (printed_chars);
 }
