@@ -22,14 +22,23 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+			if (*format == '\0')
+				return (-1);
+			
 			switch (*format)
+
 			{
 			case 'c':
 				printed_chars += _putchar(va_arg(args, int));
 				break;
 			case 's':
-				printed_chars += _print_str(va_arg(args, char *));
-				break;
+				{
+					char *str = va_arg(args, char *);
+					if (str == NULL)
+					str = "(null)";
+					printed_chars += _print_str(str);
+					break;
+				}
 			case '%':
 				printed_chars += _putchar('%');
 				break;
