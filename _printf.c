@@ -22,39 +22,43 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0')
+			if (*format == '\0') /* Invalid conversion: % at the end of format */
 				return (-1);
+
 			switch (*format)
 			{
-				case 'c':
-					printed_chars += _print_char(va_arg(args, int));
+			case 'c':
+				printed_chars += _putchar(va_arg(args, int));
+				break;
+			case 's':
+				{
+					char *str = va_arg(args, char *);
+					if (str == NULL)
+						str = "(null)";
+					printed_chars += _print_str(str);
 					break;
-				case 's':
-					{
-						char *str = va_arg(args, char *);
-
-						printed_chars += _print_str(str);
-						break;
-					}
-				case '%':
-					printed_chars += _print_char('%');
-					break;
-				case 'd':
-				case 'i':
-					printed_chars += _print_int(va_arg(args, int));
-					break;
-				default:
-					printed_chars += _print_char('%');
-					printed_chars += _print_char(*format);
-					break;
+				}
+			case '%':
+				printed_chars += _putchar('%');
+				break;
+			case 'd':
+			case 'i':
+				printed_chars += _print_int(va_arg(args, int));
+				break;
+			default:
+				printed_chars += _putchar('%');
+				printed_chars += _putchar(*format);
+				break;
 			}
 		}
 		else
 		{
-			printed_chars += _print_char(*format);
+			printed_chars += _putchar(*format);
 		}
 		format++;
 	}
+
 	va_end(args);
+
 	return (printed_chars);
 }
