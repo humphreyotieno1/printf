@@ -3,6 +3,7 @@
 #include <unistd.h>
 
 int handle_conversion(const char *format, va_list args);
+int _precision(const char *format);
 int _putchar(char c);
 
 /**
