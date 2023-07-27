@@ -21,4 +21,5 @@ int _print_int(int n);
 int _precision(const char *format);
 int _width(const char *format, bool has_precision);
 
+int _print_ptr(void *ptr);
 #endif
