@@ -79,6 +79,16 @@ int handle_conversion(const char *format, va_list args)
 		case 'i':
 			printed_chars += _print_int(va_arg(args, int));
 			break;
+		case 'b':
+			{
+				unsigned int num = va_arg(args, unsigned int);
+
+				char binary[33];
+
+				printf(binary, sizeof(binary), "%u", num);
+				printed_chars += _print_str(binary);
+				break;
+			}
 		default:
 			printed_chars += _putchar('%');
 			printed_chars += _putchar(*format);
