@@ -6,7 +6,7 @@
 int handle_conversion(const char *format, va_list args);
 int _precision(const char *format);
 int _print_str(char *str);
-int _print_int(int n);
+int _print_int(int num);
 int _putchar(char c);
 
 
@@ -87,12 +87,7 @@ int handle_conversion(const char *format, va_list args)
 
 				char binary[33];
 
-				for (int i = 31; i >= 0; i--)
-				{
-					binary[31 - i] = ((num >> i) & 1) + '0';
-				}
-				binary[32] = '\0';
-
+				snprintf(binary, sizeof(binary), "%u", num);
 				printed_chars += _print_str(binary);
 				break;
 			}

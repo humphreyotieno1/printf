@@ -10,7 +10,7 @@ int _putchar(char c);
  * Return: The number of characters printed.
  */
 
-int _print_int(int n)
+int _print_int(int num)
 {
 
 int n_chars = 0;
