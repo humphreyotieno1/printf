@@ -131,3 +131,25 @@ int handle_conversion(const char *format, va_list args)
 	}
 	return (printed_chars);
 }
+/*
+ * main - implementations of the functions
+ * Return: 0
+ */
+
+int main(void)
+{
+	unsigned int num = 42;
+
+	char *non_printable_str = "Hello, \nWorld!\t";
+
+	int *ptr = &num;
+
+	_printf("Unsigned Decimal: %u\n", num);
+	_printf("Octal: %o\n", num);
+	_printf("Lowercase Hex: %x\n", num);
+	_printf("Uppercase Hex: %X\n", num);
+	_printf("Octal String: %S\n", non_printable_str);
+	_printf("Pointer Address: %p\n", ptr);
+	_printf("Binary representation: %b\n", num);
+	return (0);
+}
