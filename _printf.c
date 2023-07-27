@@ -8,7 +8,7 @@ int _precision(const char *format);
 int _print_str(char *str);
 int _print_int(int n);
 int _putchar(char c);
-int _print_ptr(void *ptr);
+
 
 /**
  * _printf - Produces output according to a format.

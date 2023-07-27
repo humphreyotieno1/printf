@@ -16,10 +16,8 @@ int _print_str(char *str);
 int _printf(const char *format, ...);
 
 /*Function to print an integer*/
-int _print_int(int n);
+int _print_int(int num);
 
 int _precision(const char *format);
 int _width(const char *format, bool has_precision);
-
-int _print_ptr(void *ptr);
 #endif
