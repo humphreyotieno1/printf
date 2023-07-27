@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int handle_conversion(const char *format, va_list args, const char **format_ptr);
+int handle_conversion(const char *format, va_list args);
 int _precision(const char *format);
 int _print_str(char *str);
 int _print_int(int n);
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 				return (-1);
 
 
-			printed_chars += handle_conversion(format, args, &format);
+			printed_chars += handle_conversion(format, args);
 			format++;
 		}
 		else
@@ -52,10 +52,9 @@ int _printf(const char *format, ...)
  * handle_conversion - Handles the conversion specifier in the format string.
  * @format: Pointer to the conversion specifier character.
  * @args: The va_list of arguments.
- * @format_ptr: pointer to the current format character.
  * Return: The number of characters printed for this conversion.
  */
-int handle_conversion(const char *format, va_list args, const char **format_ptr)
+int handle_conversion(const char *format, va_list args)
 {
 	int printed_chars = 0;
 
@@ -86,6 +85,5 @@ int handle_conversion(const char *format, va_list args, const char **format_ptr)
 			/*printed_chars += 2; */
 			break;
 	}
-	*format_ptr = format + 1;
 	return (printed_chars);
 }
