@@ -85,10 +85,15 @@ int handle_conversion(const char *format, va_list args)
 			{
 				unsigned int num = va_arg(args, unsigned int);
 
-				char binary[33];
+				int bit_position = 31;
 
-				snprintf(binary, sizeof(binary), "%u", num);
-				printed_chars += _print_str(binary);
+				while (bit_position >= 0)
+				{
+					int bit_value = (num >> bit_position) & 1;
+
+					printed_chars += _putchar(bit_value + '0');
+					bit_position--;
+				}
 				break;
 			}
 		default:
