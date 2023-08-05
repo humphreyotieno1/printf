@@ -82,8 +82,8 @@ int handle_conversion(const char *format, va_list args)
 			{
 			printed_chars += _print_int(va_arg(args, int));
 			printed_chars += _print_int(num);
-			break;
 			}
+			break;
 		case 'b':
 			{
 				unsigned int num = va_arg(args, unsigned int);
