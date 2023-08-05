@@ -84,7 +84,6 @@ int handle_conversion(const char *format, va_list args)
 		case 'b':
 			{
 				unsigned int num = va_arg(args, unsigned int);
-
 				int bit_position = 31;
 
 				while (bit_position >= 0)
@@ -99,9 +98,7 @@ int handle_conversion(const char *format, va_list args)
 		default:
 			printed_chars += _putchar('%');
 			printed_chars += _putchar(*format);
-			/*printed_chars += 2; */
 			break;
 	}
 	return (printed_chars);
 }
-
