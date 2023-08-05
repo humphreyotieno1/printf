@@ -80,10 +80,11 @@ int handle_conversion(const char *format, va_list args)
 		case 'd':
 		case 'i':
 			{
-			printed_chars += _print_int(va_arg(args, int));
+			int num = va_arg(args, int);
+
 			printed_chars += _print_int(num);
-			}
 			break;
+			}
 		case 'b':
 			{
 				unsigned int num = va_arg(args, unsigned int);
